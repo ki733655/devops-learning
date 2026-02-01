@@ -1,0 +1,21 @@
+name: Simple CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate HTML file exists
+        run: |
+          echo "Checking if index.html exists"
+          ls
+          test -f index.html
