@@ -23,7 +23,7 @@ jobs:
 
       - name : Use secret
         run : |
-            echo "Our secret value is ${{ secrets.SecretVariable}}"
+            echo "Our secret value is ${{ secrets.SECRETVARIABLE}}"
 
       - name: Validate HTML file exists
         run: |
