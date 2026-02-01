@@ -10,9 +10,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      PROJECT_NAME: DevOps-CI-Demo
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name : Print env variable
+        run :  |
+            echo "Our project is $PROJECT_NAME"
+
+      - name : Use secret
+        run : |
+            echo "Our secret value is ${{ secrets.SecretVariable}}"
 
       - name: Validate HTML file exists
         run: |
