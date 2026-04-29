@@ -1,0 +1,1 @@
+*/2 * * * * /home/khair_ubunt/dev-task-6/backup.sh
