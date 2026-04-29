@@ -1,0 +1,32 @@
+name: Simple CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      PROJECT_NAME: DevOps-CI-Demo
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name : Print env variable
+        run :  |
+            echo "Our project is $PROJECT_NAME"
+
+      - name : Use secret
+        run : |
+            echo "Our secret value is ${{ secrets.SECRETVARIABLE}}"
+
+      - name: Validate HTML file exists
+        run: |
+          echo "Checking if index.html exists"
+          ls
+          test -f index.html
